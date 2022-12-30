@@ -12,7 +12,6 @@ def rotation_invariant(grey_img,template,method,img2,threshold):
         # cv.waitKey(1) 
         result= cv.matchTemplate(cannySrc,cannyTemp,eval(method))
 
-        print(angle)
         location=np.where(result>= threshold)
         if location:
             for point in zip(*location[::-1]):
